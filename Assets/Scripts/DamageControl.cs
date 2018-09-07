@@ -13,4 +13,12 @@ public class DamageControl : MonoBehaviour {
             Player.GetComponent<PlayerStateController>().Damaged(damage);
         }
     }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Player.GetComponent<PlayerStateController>().Damaged(damage);
+        }
+    }
 }

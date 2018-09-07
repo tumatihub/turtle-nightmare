@@ -112,6 +112,7 @@ public class PlayerStateController : MonoBehaviour {
 
     public void Damaged(int damage)
     {
+        Debug.Log("Damage");
         life.OnDamage(damage);
         transform.position = life.currentPosition;
     }
