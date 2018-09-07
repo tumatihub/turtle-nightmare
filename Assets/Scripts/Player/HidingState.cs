@@ -21,12 +21,22 @@ public class HidingState : State
 
     public override void onEnter(PlayerStateController controller)
     {
-        controller.animator.SetBool("hide", true);
+        controller.isHidden = true;
+        controller.gameObject.layer = LayerMask.NameToLayer("Hidden");
+        controller.turtleSprite.sortingLayerName = "Hidden";
+        controller.transform.position = new Vector2(
+            controller.wallHole.position.x, 
+            controller.transform.position.y
+        );
+        controller.animator.SetBool("Hide", true);
         controller.rb.velocity = Vector2.zero;
     }
 
     public override void onExit(PlayerStateController controller)
     {
-        controller.animator.SetBool("hide", false);
+        controller.animator.SetBool("Hide", false);
+        controller.isHidden = false;
+        controller.turtleSprite.sortingLayerName = "Player";
+        controller.gameObject.layer = LayerMask.NameToLayer("Player");
     }
 }

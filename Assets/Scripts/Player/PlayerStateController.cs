@@ -25,6 +25,8 @@ public class PlayerStateController : MonoBehaviour {
     [HideInInspector] public LifeController life;
     public Transform target;
     public bool isHidden = false;
+    public Transform wallHole;
+    [HideInInspector] public SpriteRenderer turtleSprite;
 
     // Hook
     public float speedHook;
@@ -58,6 +60,7 @@ public class PlayerStateController : MonoBehaviour {
         _state = movingState;
         hookLine = GetComponent<LineRenderer>();
         animator = GetComponent<Animator>();
+        turtleSprite = GetComponent<SpriteRenderer>();
     }
 
     // Use this for initialization
@@ -171,6 +174,7 @@ public class PlayerStateController : MonoBehaviour {
     {
         if (collision.CompareTag("Shadow"))
         {
+            wallHole = collision.transform;
             isInShadow = true;
         }
     }
@@ -179,6 +183,7 @@ public class PlayerStateController : MonoBehaviour {
     {
         if (collision.CompareTag("Shadow"))
         {
+            wallHole = null;
             isInShadow = false;
         }
     }

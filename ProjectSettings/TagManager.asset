@@ -21,9 +21,9 @@ TagManager:
   - 
   - 
   - Platform
-  - 
-  - 
-  - 
+  - Enemies
+  - Player
+  - Hidden
   - 
   - 
   - 
@@ -56,6 +56,12 @@ TagManager:
     locked: 0
   - name: Props
     uniqueID: 2765315991
+    locked: 0
+  - name: Hidden
+    uniqueID: 3207837999
+    locked: 0
+  - name: Enemies
+    uniqueID: 2358795127
     locked: 0
   - name: Player
     uniqueID: 3912125921
