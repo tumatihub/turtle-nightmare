@@ -229,12 +229,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1074342675645316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 699d668d725d7684d93d2c74e44f1796, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c56f939bd5f94a488e3bb300a933d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
   speed: 2
-  movingRight: 0
+  movingRight: 1
   player: {fileID: 0}
 --- !u!212 &212199576274588428
 SpriteRenderer:

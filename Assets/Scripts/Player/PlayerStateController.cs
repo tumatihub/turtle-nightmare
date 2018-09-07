@@ -24,6 +24,7 @@ public class PlayerStateController : MonoBehaviour {
     [HideInInspector] public GameObject lifeController;
     [HideInInspector] public LifeController life;
     public Transform target;
+    public bool isHidden = false;
 
     // Hook
     public float speedHook;
