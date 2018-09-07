@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Aggro
+  - Danger
+  - Hookable
+  - Platform
+  - MovingPlatform
+  - HookSupport
+  - Shadow
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Platform
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Wall
+    uniqueID: 3611880433
+    locked: 0
+  - name: Platform
+    uniqueID: 2825757983
+    locked: 0
+  - name: Props
+    uniqueID: 2765315991
+    locked: 0
+  - name: Player
+    uniqueID: 3912125921
+    locked: 0
