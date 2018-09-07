@@ -67,11 +67,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4180412496490582}
-  - component: {fileID: 114865076859497138}
   - component: {fileID: 50580381329541028}
   - component: {fileID: 212230533866911982}
-  - component: {fileID: 61783829308862216}
   - component: {fileID: 120606070600829144}
+  - component: {fileID: 61223735885349664}
+  - component: {fileID: 95266741248455292}
+  - component: {fileID: 114101872968647192}
   m_Layer: 13
   m_Name: PlayerCube
   m_TagString: Player
@@ -111,9 +112,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1999953658667496}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.47, y: 1.87, z: -0.005859375}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4895234573926694}
   - {fileID: 4043130987733902}
@@ -128,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1025613431232844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12, y: -1.46, z: 0}
+  m_LocalPosition: {x: -0.02, y: -0.279, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4180412496490582}
@@ -168,7 +169,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: 8f79c120043afca43ba1de65917b6c4d, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -186,10 +187,10 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.080219105, y: 0}
+  m_Offset: {x: -0.03, y: 0}
   serializedVersion: 2
-  m_Radius: 0.58021903
---- !u!61 &61783829308862216
+  m_Radius: 0.105317146
+--- !u!61 &61223735885349664
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,19 +202,87 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.098845005}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.5, y: 2.5}
+    oldSize: {x: 0.5957031, y: 0.9472656}
     newSize: {x: 2.5, y: 2.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2.5}
+  m_Size: {x: 0.5957031, y: 0.7495756}
   m_EdgeRadius: 0
+--- !u!95 &95266741248455292
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1999953658667496}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1e4940b55c03b6a41b2af5c44c37738e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114101872968647192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1999953658667496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b4e2f1b575aea4bba2450404fa2999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveInput: 0
+  rb: {fileID: 0}
+  speed: 5
+  facingRight: 1
+  isGrounded: 0
+  feetPos: {fileID: 4895234573926694}
+  checkRadius: 0.3
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  jumpForce: 5
+  jumpTime: 0.3
+  hook: {fileID: 4043130987733902}
+  hookLine: {fileID: 0}
+  whereToShoot: {x: 0, y: 0}
+  cam: {fileID: 0}
+  animator: {fileID: 0}
+  fallingSpeed: 4
+  lifeController: {fileID: 0}
+  life: {fileID: 0}
+  target: {fileID: 0}
+  speedHook: 20
+  isHooked: 0
+  isRetracting: 0
+  isRetracted: 1
+  hookMaxDistance: 15
+  speedHookPlayer: 20
+  hookInertia: 150
+  hookTargetDistance: 2
+  isInShadow: 0
+  _state: {fileID: 0}
+  movingState: {fileID: 11400000, guid: f7e130e161b584e4a9754d449e6ce572, type: 2}
+  jumpingState: {fileID: 11400000, guid: 1cb6fc0b2ef498e4cbbeac2d26509ed3, type: 2}
+  shootingState: {fileID: 11400000, guid: af74eafbeb2bfb347861d2e397e578dd, type: 2}
+  hookedState: {fileID: 11400000, guid: c7aa8bfa4c7047841a846a20f292eeb7, type: 2}
+  hidingState: {fileID: 11400000, guid: c0adee267101abb44aad167b01df8b4c, type: 2}
+  retractingState: {fileID: 11400000, guid: 3b7ae60034fe71f4aabd9e18ba4a5544, type: 2}
+  pullingState: {fileID: 11400000, guid: 6ff3319af9118154099e136acf02d235, type: 2}
+  fallingState: {fileID: 11400000, guid: efc5f9357ed36e346824e6e84f5bdfe6, type: 2}
 --- !u!114 &114190414539187520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,39 +295,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1999953658667496}
---- !u!114 &114865076859497138
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1999953658667496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6ef6934c7bb7304994d46f4b857cfa0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 0
-  cam: {fileID: 0}
-  speed: 3
-  jumpForce: 2.9
-  feetPos: {fileID: 4895234573926694}
-  hook: {fileID: 4043130987733902}
-  checkRadius: 0.09
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
-  jumpTime: 0.4
-  speedHook: 13
-  isHooked: 0
-  isRetracted: 1
-  speedHookPlayer: 13
-  speedHookRetracting: 13
-  isRetracting: 0
-  hookInertia: 700
-  hookMaxDistance: 15
-  hasFired: 0
-  lifeController: {fileID: 0}
-  life: {fileID: 0}
 --- !u!120 &120606070600829144
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -291,8 +327,8 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -382841375
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
@@ -383,10 +419,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -382841375
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8666d49e17554ba419c652531aa8ab3b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 09c0d863f17d75e4890bbfe971c852b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

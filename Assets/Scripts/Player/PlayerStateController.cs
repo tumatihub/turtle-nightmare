@@ -23,6 +23,7 @@ public class PlayerStateController : MonoBehaviour {
     public float fallingSpeed;
     [HideInInspector] public GameObject lifeController;
     [HideInInspector] public LifeController life;
+    public Transform target;
 
     // Hook
     public float speedHook;
@@ -33,6 +34,7 @@ public class PlayerStateController : MonoBehaviour {
     public float hookMaxDistance;
     public float speedHookPlayer;
     public float hookInertia;
+    public float hookTargetDistance;
 
     // Shadow
     public bool isInShadow;
@@ -63,6 +65,9 @@ public class PlayerStateController : MonoBehaviour {
         life = lifeController.GetComponent<LifeController>();
         life.initialPosition = transform.position;
         life.currentPosition = transform.position;
+
+        Cursor.visible = false;
+
     }
 	
 	// Update is called once per frame
@@ -74,6 +79,8 @@ public class PlayerStateController : MonoBehaviour {
     private void FixedUpdate()
     {
         _state.update(this);
+        UpdateAnimator();
+        UpdateHookTarget();
     }
 
     public void Flip()
@@ -86,6 +93,26 @@ public class PlayerStateController : MonoBehaviour {
             transform.localScale = scaler;
         }
         
+    }
+
+    void UpdateHookTarget()
+    {
+        target.parent.transform.position = transform.position;
+
+        Vector2 mousePos = new Vector2(
+                    cam.ScreenToWorldPoint(Input.mousePosition).x,
+                    cam.ScreenToWorldPoint(Input.mousePosition).y
+                );
+        Vector3 diff = (new Vector3(mousePos.x, mousePos.y, 0) - target.parent.transform.position).normalized;
+        target.localPosition = diff * hookTargetDistance;
+        
+    }
+
+    void UpdateAnimator()
+    {
+        animator.SetBool("Ground", isGrounded);
+        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+        animator.SetFloat("vSpeed", rb.velocity.y);
     }
 
     public void ChangeState(State nextState)
