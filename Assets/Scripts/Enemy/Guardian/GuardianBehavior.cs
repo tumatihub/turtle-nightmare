@@ -9,6 +9,7 @@ public class GuardianBehavior : MonoBehaviour {
     public bool movingRight = true;
     public GameObject player;
     private Animator anima;
+    private PlayerStateController playerScript;
     private AggroBox aggroScript;
     private Vector2 waypoint;
     private ObstacleDetection obstacle;
@@ -16,6 +17,7 @@ public class GuardianBehavior : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         anima = GetComponent<Animator>();
+        playerScript = player.GetComponent<PlayerStateController>();
         aggroScript = GetComponentInChildren<AggroBox>();
         waypoint = transform.position;
         obstacle = GetComponentInChildren<ObstacleDetection>();
@@ -31,7 +33,7 @@ public class GuardianBehavior : MonoBehaviour {
         switch (state)
         {
             case States.GUARDING:
-                if(aggroScript.aggro == true)
+                if(aggroScript.aggro == true && playerScript.isHidden ==false)
                 {
                     state = States.FOLLOWING;
                     break;
@@ -50,7 +52,7 @@ public class GuardianBehavior : MonoBehaviour {
                 }
                 break;
             case States.RETURNING:
-                if (aggroScript.aggro == true)
+                if (aggroScript.aggro == true && playerScript.isHidden == false)
                 {
                     state = States.FOLLOWING;
                     break;

@@ -9,6 +9,7 @@ public class RaptorPatrolBehavior : MonoBehaviour {
     public float speed = 2;
     public bool movingRight = true;
     public GameObject player;
+    private PlayerStateController playerScript;
     private Animator anima;
     private AggroBox aggroScript;
     private ObstacleDetection obstacle;
@@ -19,6 +20,7 @@ public class RaptorPatrolBehavior : MonoBehaviour {
         anima = GetComponent<Animator>();
         aggroScript = GetComponentInChildren<AggroBox>();
         obstacle = GetComponentInChildren<ObstacleDetection>();
+        playerScript = player.GetComponent<PlayerStateController>();
     }
 
     // Update is called once per frame
@@ -31,7 +33,7 @@ public class RaptorPatrolBehavior : MonoBehaviour {
         switch (state)
         {
             case States.PATROLLING:
-                if (aggroScript.aggro == true)
+                if (aggroScript.aggro == true && playerScript.isHidden == false)
                 {
                     state = States.FOLLOWING;
                     break;

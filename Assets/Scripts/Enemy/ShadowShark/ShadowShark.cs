@@ -7,8 +7,9 @@ public class ShadowShark : MonoBehaviour {
     public States state = States.PATROLLING;
     public float speed=2;
     public bool movingRight = true;
-    public Transform player;
+    public GameObject player;
     public GameObject aggroBox;
+    private PlayerStateController playerScript;
     private AggroBox aggroScript;
     private float height;
     private Animator anima;
@@ -18,6 +19,7 @@ public class ShadowShark : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         aggroScript = aggroBox.GetComponent<AggroBox>();
+        playerScript = player.GetComponent<PlayerStateController>();
         height = transform.position.y;
         anima = GetComponent<Animator>();
 	}
@@ -31,7 +33,7 @@ public class ShadowShark : MonoBehaviour {
         switch (state)
         {
             case States.PATROLLING:
-                if (aggroScript.aggro == true)
+                if (aggroScript.aggro == true && playerScript.isHidden == false)
                 {
                     state = States.FOLLOWING;
                     break;
@@ -56,7 +58,7 @@ public class ShadowShark : MonoBehaviour {
                 break;
 
             case States.FOLLOWING:
-                if (player.position.x > transform.position.x - 0.8f && player.position.x < transform.position.x + 0.8f)
+                if (player.transform.position.x > transform.position.x - 0.8f && player.transform.position.x < transform.position.x + 0.8f)
                 {
                     state = States.ATTACKING;
                     return;
@@ -67,12 +69,12 @@ public class ShadowShark : MonoBehaviour {
                     return;
                 }
                 anima.SetBool("Attacking", false);
-                if (player.position.x > transform.position.x)
+                if (player.transform.position.x > transform.position.x)
                 {
                     movingRight = true;
                     transform.eulerAngles = new Vector3(0, 0, 0);
                 }
-                if (player.position.x < transform.position.x)
+                if (player.transform.position.x < transform.position.x)
                 {
                     movingRight = false;
                     transform.eulerAngles = new Vector3(0, -180, 0);
