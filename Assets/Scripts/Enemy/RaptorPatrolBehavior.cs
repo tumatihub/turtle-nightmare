@@ -8,7 +8,7 @@ public class RaptorPatrolBehavior : MonoBehaviour {
     public States state = States.PATROLLING;
     public float speed = 2;
     public bool movingRight = true;
-    public GameObject player;
+    private GameObject player;
     private PlayerStateController playerScript;
     private Animator anima;
     private AggroBox aggroScript;
@@ -18,6 +18,7 @@ public class RaptorPatrolBehavior : MonoBehaviour {
     void Start()
     {
         anima = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player");
         aggroScript = GetComponentInChildren<AggroBox>();
         obstacle = GetComponentInChildren<ObstacleDetection>();
         playerScript = player.GetComponent<PlayerStateController>();

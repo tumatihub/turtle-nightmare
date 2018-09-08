@@ -7,7 +7,7 @@ public class GuardianBehavior : MonoBehaviour {
     public States state = States.GUARDING;
     public float speed = 2;
     public bool movingRight = true;
-    public GameObject player;
+    private GameObject player;
     private Animator anima;
     private PlayerStateController playerScript;
     private AggroBox aggroScript;
@@ -17,6 +17,7 @@ public class GuardianBehavior : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         anima = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerStateController>();
         aggroScript = GetComponentInChildren<AggroBox>();
         waypoint = transform.position;

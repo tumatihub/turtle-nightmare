@@ -7,8 +7,8 @@ public class ShadowShark : MonoBehaviour {
     public States state = States.PATROLLING;
     public float speed=2;
     public bool movingRight = true;
-    public GameObject player;
     public GameObject aggroBox;
+    private GameObject player;
     private PlayerStateController playerScript;
     private AggroBox aggroScript;
     private float height;
@@ -19,6 +19,7 @@ public class ShadowShark : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         aggroScript = aggroBox.GetComponent<AggroBox>();
+        player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerStateController>();
         height = transform.position.y;
         anima = GetComponent<Animator>();
