@@ -46,7 +46,7 @@ public class FallingState : State
         _lastSpeed += controller.moveInput * controller.fallingSpeed * Time.fixedDeltaTime;
         // Move player
         controller.rb.velocity = new Vector2(_lastSpeed, controller.rb.velocity.y);
-        controller.isGrounded = Physics2D.OverlapCircle(controller.feetPos.position, controller.checkRadius, controller.whatIsGround);
+        
         
 
         // Retract Hook

@@ -11,7 +11,6 @@ public class PlayerStateController : MonoBehaviour {
     [HideInInspector] public bool facingRight = true;
     [HideInInspector] public bool isGrounded;
     public Transform feetPos;
-    public float checkRadius;
     public LayerMask whatIsGround;
     public float jumpForce;
     public float jumpTime;
@@ -163,11 +162,6 @@ public class PlayerStateController : MonoBehaviour {
         {
 
         }
-    }
-
-    public void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(feetPos.transform.position, checkRadius);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
