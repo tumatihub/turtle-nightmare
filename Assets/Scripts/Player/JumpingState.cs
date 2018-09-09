@@ -37,6 +37,26 @@ public class JumpingState : State
                 _canJump = false;
             }
 
+            
+        }
+        
+
+        // Decision to MovingState
+        if (controller.isGrounded)
+        {
+            _isPressingJump = false;
+            _canJump = true;
+            _jumping = false;
+            controller.ChangeState(controller.movingState);
+        }
+
+    }
+
+    public override void update(PlayerStateController controller)
+    {
+        
+        if (_jumping)
+        {
             // Fixed
             if (_isPressingJump && _canJump)
             {
@@ -54,39 +74,7 @@ public class JumpingState : State
                 }
 
             }
-            Debug.Log("_yv" + _yv);
-            Debug.Log("timer" + _jumpTimeCounter);
             controller.rb.velocity = new Vector2(controller.moveInput * controller.speed, _yv);
-            //controller.isGrounded = Physics2D.OverlapCircle(controller.feetPos.position, controller.checkRadius, controller.whatIsGround);
-            _result = Physics2D.OverlapCircle(controller.feetPos.transform.position, controller.checkRadius, controller.whatIsGround);
-            if (_result != null)
-            {
-                Debug.Log(_result.gameObject.tag);
-                Debug.DrawLine(controller.transform.position, _result.gameObject.transform.position);
-                controller.isGrounded = true;
-            }
-            else
-            {
-                controller.isGrounded = false;
-            }
-        }
-        
-
-        // Decision to MovingState
-        if (controller.isGrounded)
-        {
-            _isPressingJump = false;
-            _canJump = true;
-            _jumping = false;
-            controller.ChangeState(controller.movingState);
-        }
-
-    }
-
-    public override void update(PlayerStateController controller)
-    {
-        if (_jumping)
-        {
             
         }
         

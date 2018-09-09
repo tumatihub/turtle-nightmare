@@ -33,7 +33,6 @@ public class MovingState : State
     public override void update(PlayerStateController controller)
     {
         controller.rb.velocity = new Vector2(controller.moveInput * controller.speed, controller.rb.velocity.y);
-        controller.isGrounded = Physics2D.OverlapCircle(controller.feetPos.position, controller.checkRadius, controller.whatIsGround);
         
     }
 }
