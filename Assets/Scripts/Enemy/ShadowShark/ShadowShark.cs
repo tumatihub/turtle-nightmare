@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShadowShark : MonoBehaviour {
     public enum States {PATROLLING, FOLLOWING, ATTACKING}
     public States state = States.PATROLLING;
-    public float speed=2;
+    public float speed=3;
     public bool movingRight = true;
     public GameObject aggroBox;
     private GameObject player;
@@ -80,7 +80,7 @@ public class ShadowShark : MonoBehaviour {
                     movingRight = false;
                     transform.eulerAngles = new Vector3(0, -180, 0);
                 }
-                transform.Translate(Vector2.right * (speed * 1.5f) * Time.deltaTime);
+                transform.Translate(Vector2.right * (speed * 2f) * Time.deltaTime);
                 break;
 
             case States.ATTACKING:

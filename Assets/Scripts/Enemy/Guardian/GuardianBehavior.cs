@@ -83,7 +83,7 @@ public class GuardianBehavior : MonoBehaviour {
                     state = States.RETURNING;
                     return;
                 }
-                if (player.transform.position.x > transform.position.x - 2.5f && player.transform.position.x < transform.position.x + 2.5f)
+                if (player.transform.position.x > transform.position.x - 2f && player.transform.position.x < transform.position.x + 2f)
                 {
                     if(player.transform.position.x > transform.position.x)
                     {
@@ -112,7 +112,7 @@ public class GuardianBehavior : MonoBehaviour {
                 {
                     anima.SetBool("Idle", false);
                     anima.SetBool("Running", true);
-                    transform.Translate(Vector2.left * (speed * 1.5f) * Time.deltaTime);
+                    transform.Translate(Vector2.left * (speed * 3f) * Time.deltaTime);
                 }
                 else
                 {

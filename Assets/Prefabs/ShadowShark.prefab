@@ -218,9 +218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  speed: 2
+  speed: 3.02
   movingRight: 1
-  player: {fileID: 0}
   aggroBox: {fileID: 0}
 --- !u!114 &114688250633289232
 MonoBehaviour:

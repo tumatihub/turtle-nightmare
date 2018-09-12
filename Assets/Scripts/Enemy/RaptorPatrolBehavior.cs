@@ -62,7 +62,7 @@ public class RaptorPatrolBehavior : MonoBehaviour {
                     state = States.PATROLLING;
                     return;
                 }
-                if (player.transform.position.x > transform.position.x - 2.5f && player.transform.position.x < transform.position.x + 2.5f)
+                if (player.transform.position.x > transform.position.x - 2f && player.transform.position.x < transform.position.x + 2f)
                 {
                     if (player.transform.position.x > transform.position.x)
                     {
@@ -91,7 +91,7 @@ public class RaptorPatrolBehavior : MonoBehaviour {
                 {
                     anima.SetBool("Idle", false);
                     anima.SetBool("Running", true);
-                    transform.Translate(Vector2.left * (speed * 2) * Time.deltaTime);
+                    transform.Translate(Vector2.left * (speed * 3) * Time.deltaTime);
                 }
                 else
                 {
