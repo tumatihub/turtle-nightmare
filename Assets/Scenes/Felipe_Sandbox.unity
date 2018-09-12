@@ -204,7 +204,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 2
-      m_ColliderType: 1
+      m_ColliderType: 2
   - first: {x: 46, y: -8, z: 0}
     second:
       m_TileIndex: 0
@@ -6771,7 +6771,15 @@ CompositeCollider2D:
         Y: 73370262
       - X: 200568848
         Y: 72624512
-    - - X: 1180022016
+    - - X: 1180000000
+        Y: -80000000
+      - X: 1172581618
+        Y: -80000000
+      - X: 1172609920
+        Y: -79963376
+      - X: 1180022016
+        Y: -79963376
+      - X: 1180022016
         Y: -80000000
       - X: 1230000000
         Y: -80000000
@@ -6861,22 +6869,12 @@ CompositeCollider2D:
         Y: -70000000
       - X: 1150000000
         Y: -80000000
-      - X: 1172581618
+      - X: 1170000000
         Y: -80000000
-      - X: 1171696768
-        Y: -81145016
-      - X: 1169977984
-        Y: -84152832
-      - X: 1169977984
-        Y: -86569824
-      - X: 1170568832
-        Y: -87375488
-      - X: 1170622592
-        Y: -89577640
-      - X: 1170676224
-        Y: -90007328
-      - X: 1180022016
-        Y: -90007328
+      - X: 1170000000
+        Y: -90000000
+      - X: 1180000000
+        Y: -90000000
     - - X: 339978016
         Y: 23430176
       - X: 339978016
@@ -7019,7 +7017,11 @@ CompositeCollider2D:
     - - {x: 20.002197, y: 7.3370266}
       - {x: 20.002197, y: 7.3370266}
       - {x: 20.056885, y: 7.262451}
-    - - {x: 118.002205, y: -8}
+    - - {x: 118, y: -8}
+      - {x: 117.25816, y: -8}
+      - {x: 117.260994, y: -7.996338}
+      - {x: 118.002205, y: -7.996338}
+      - {x: 118.002205, y: -8}
       - {x: 123, y: -8}
       - {x: 123, y: 0}
       - {x: 121, y: 0}
@@ -7064,14 +7066,9 @@ CompositeCollider2D:
       - {x: 90, y: -7}
       - {x: 115, y: -7}
       - {x: 115, y: -8}
-      - {x: 117.25816, y: -8}
-      - {x: 117.16968, y: -8.114502}
-      - {x: 116.9978, y: -8.415283}
-      - {x: 116.9978, y: -8.656982}
-      - {x: 117.056885, y: -8.737549}
-      - {x: 117.06226, y: -8.957764}
-      - {x: 117.06763, y: -9.000733}
-      - {x: 118.002205, y: -9.000733}
+      - {x: 117, y: -8}
+      - {x: 117, y: -9}
+      - {x: 118, y: -9}
     - - {x: 33.997803, y: 2.3430176}
       - {x: 33.997803, y: 2.5847168}
       - {x: 34, y: 2.588564}
@@ -7328,11 +7325,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4726592856285916, guid: fcad9b90915b9cb458b64e256269a758, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.19
+      value: -14.65
       objectReference: {fileID: 0}
     - target: {fileID: 4726592856285916, guid: fcad9b90915b9cb458b64e256269a758, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.75
+      value: 2.88
       objectReference: {fileID: 0}
     - target: {fileID: 4726592856285916, guid: fcad9b90915b9cb458b64e256269a758, type: 2}
       propertyPath: m_LocalPosition.z
@@ -7400,7 +7397,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 542432895}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.19, y: 2.9713993, z: -0.005859375}
+  m_LocalPosition: {x: 85.37, y: 3.1013994, z: -0.005859375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1750259635}
@@ -7586,7 +7583,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 928421341}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.8875985, y: 2.8429642, z: -0.005859375}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 371066355}
@@ -7650,10 +7647,10 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 20
+  far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 7.38
+  orthographic size: 10
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -8604,7 +8601,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4284609286396886, guid: d52757d7c12e80640822019001d6e0fa, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 28.09
+      value: 16.2
       objectReference: {fileID: 0}
     - target: {fileID: 4284609286396886, guid: d52757d7c12e80640822019001d6e0fa, type: 2}
       propertyPath: m_LocalPosition.y

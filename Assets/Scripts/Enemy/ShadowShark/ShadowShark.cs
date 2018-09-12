@@ -59,7 +59,7 @@ public class ShadowShark : MonoBehaviour {
                 break;
 
             case States.FOLLOWING:
-                if (player.transform.position.x > transform.position.x - 0.8f && player.transform.position.x < transform.position.x + 0.8f)
+                if (player.transform.position.x > transform.position.x - 1f && player.transform.position.x < transform.position.x + 1f)
                 {
                     state = States.ATTACKING;
                     return;

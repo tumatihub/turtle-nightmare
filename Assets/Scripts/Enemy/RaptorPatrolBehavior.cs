@@ -62,7 +62,7 @@ public class RaptorPatrolBehavior : MonoBehaviour {
                     state = States.PATROLLING;
                     return;
                 }
-                if (player.transform.position.x > transform.position.x - 2f && player.transform.position.x < transform.position.x + 2f)
+                if (player.transform.position.x > transform.position.x - 2.5f && player.transform.position.x < transform.position.x + 2.5f)
                 {
                     if (player.transform.position.x > transform.position.x)
                     {
