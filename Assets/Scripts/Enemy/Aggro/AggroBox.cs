@@ -5,14 +5,20 @@ using UnityEngine;
 
 public class AggroBox : MonoBehaviour {
     public bool aggro = false;
+    public GameObject player;
+    public PlayerStateController playerScript;
 	// Use this for initialization
 	void Start () {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerScript = player.GetComponent<PlayerStateController>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(playerScript.dead == true)
+        {
+            aggro = false;
+        }
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)

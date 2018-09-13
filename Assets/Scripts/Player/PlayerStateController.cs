@@ -26,6 +26,7 @@ public class PlayerStateController : MonoBehaviour {
     public bool isHidden = false;
     public Transform wallHole;
     [HideInInspector] public SpriteRenderer turtleSprite;
+    public bool dead = false;
 
     // Hook
     public float speedHook;
@@ -52,6 +53,7 @@ public class PlayerStateController : MonoBehaviour {
     public State retractingState;
     public State pullingState;
     public State fallingState;
+    public State deadState;
 
     private void Awake()
     {
@@ -142,10 +144,13 @@ public class PlayerStateController : MonoBehaviour {
 
     public void Damaged(int damage)
     {
+        dead = true;
         Debug.Log("Damage");
         life.OnDamage(damage);
-        ChangeState(movingState);
-        transform.position = life.currentPosition;
+        ChangeState(deadState);
+        
+        
+        
         
     }
 
@@ -156,14 +161,20 @@ public class PlayerStateController : MonoBehaviour {
 
     public void Respawn()
     {
-        if (life.health > 0)
+        print("teste");
+       if (life.health > 0)
         {
-
+            transform.position = life.currentPosition;
         }
         else
         {
-
+            
+            life.currentPosition = life.initialPosition;
+            transform.position = life.currentPosition;
         }
+        animator.SetBool("Dead", false);
+        ChangeState(movingState);
+        dead = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
