@@ -44,9 +44,9 @@ public class JumpingState : State
         // Decision to MovingState
         if (controller.isGrounded)
         {
-            _isPressingJump = false;
-            _canJump = true;
-            _jumping = false;
+            //_isPressingJump = false;
+            //_canJump = true;
+            //_jumping = false;
             controller.ChangeState(controller.movingState);
         }
 
@@ -87,5 +87,12 @@ public class JumpingState : State
         _isPressingJump = true;
         _jumpTimeCounter = controller.jumpTime;
         _jumping = true;
+    }
+
+    public override void onExit(PlayerStateController controller)
+    {
+        _isPressingJump = false;
+        _canJump = true;
+        _jumping = false;
     }
 }
