@@ -14,14 +14,7 @@ public class DamageControl : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Player.GetComponent<PlayerStateController>().Damaged(damage);
-        }
-    }
-
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
+            print("Damage1");
             Player.GetComponent<PlayerStateController>().Damaged(damage);
         }
     }

@@ -46,6 +46,8 @@ public class ShootingState : State
         _whereToShoot = controller.GetWhereToShoot();
     }
 
+    
+
     float GetHookDistance(PlayerStateController controller)
     {
         return Vector2.Distance(controller.hook.position, controller.transform.position);

@@ -144,7 +144,9 @@ public class PlayerStateController : MonoBehaviour {
     {
         Debug.Log("Damage");
         life.OnDamage(damage);
+        ChangeState(movingState);
         transform.position = life.currentPosition;
+        
     }
 
     public void OnCheckpoint(Vector2 checkpoint)

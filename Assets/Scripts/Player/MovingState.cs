@@ -35,4 +35,13 @@ public class MovingState : State
         controller.rb.velocity = new Vector2(controller.moveInput * controller.speed, controller.rb.velocity.y);
         
     }
+
+    public override void onEnter(PlayerStateController controller)
+    {
+        controller.hookLine.enabled = false;
+        controller.hook.parent = controller.transform;
+        controller.isRetracting = false;
+        controller.hook.position = controller.transform.position;
+        controller.rb.isKinematic = false;
+    }
 }
