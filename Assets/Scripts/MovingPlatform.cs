@@ -12,6 +12,7 @@ public class MovingPlatform : MonoBehaviour {
     bool _isWaiting;
     Transform _nextPoint;
     float _timer;
+    public bool _activeByPlayer = false;
 
     public float waypointWaitTime;
     public float platformSpeed;
@@ -29,6 +30,10 @@ public class MovingPlatform : MonoBehaviour {
         if (_wayPoint == null)
         {
             Debug.LogError("Missing startpoint!");
+        }
+        if(_activeByPlayer)
+        {
+            _isActive = false;
         }
         _nextPoint = _wayPoint;
     }
@@ -54,6 +59,10 @@ public class MovingPlatform : MonoBehaviour {
                     }
                     else
                     {
+                        if (_activeByPlayer)
+                        {
+                            _isActive = false;
+                        }
                         _isWaiting = true;
                         _timer = waypointWaitTime;
                         _nextPoint = _wayPoint;
@@ -73,5 +82,18 @@ public class MovingPlatform : MonoBehaviour {
             }
         }
 	}
-    
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player") && _activeByPlayer)
+    //    {
+    //        _isActive = true;
+    //    }
+    //}
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && _activeByPlayer)
+        {
+            _isActive = true;
+        }
+    }
 }

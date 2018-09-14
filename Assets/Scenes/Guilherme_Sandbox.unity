@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d431abc524ca0dc46a7a617533275966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _activeByPlayer: 0
   waypointWaitTime: 2
   platformSpeed: 3
 --- !u!61 &52481153
@@ -514,6 +515,15 @@ Prefab:
     - target: {fileID: 1574622717816922, guid: 4e64a3a042445d049b53992610f7bbf0, type: 2}
       propertyPath: m_Name
       value: MovingPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682006156212360, guid: 4e64a3a042445d049b53992610f7bbf0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 10.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654399544791948, guid: 4e64a3a042445d049b53992610f7bbf0,
+        type: 2}
+      propertyPath: _activeByPlayer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e64a3a042445d049b53992610f7bbf0, type: 2}
@@ -13897,6 +13907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d431abc524ca0dc46a7a617533275966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _activeByPlayer: 0
   waypointWaitTime: 2
   platformSpeed: 3
 --- !u!61 &1283223771
@@ -14260,6 +14271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d431abc524ca0dc46a7a617533275966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _activeByPlayer: 0
   waypointWaitTime: 2
   platformSpeed: 3
 --- !u!61 &1373806575
