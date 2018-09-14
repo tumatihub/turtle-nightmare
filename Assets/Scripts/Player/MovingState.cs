@@ -22,7 +22,7 @@ public class MovingState : State
             }
 
             // Decision to hide
-            if (controller.isInShadow && Input.GetButtonDown("Fire2"))
+            if (controller.isInShadow && (Input.GetButtonDown("Fire2")||Input.GetKeyDown(KeyCode.W)))
             {
                 Debug.Log("Hide");
                 controller.ChangeState(controller.hidingState);

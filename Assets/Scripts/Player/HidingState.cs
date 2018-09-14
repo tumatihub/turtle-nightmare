@@ -8,7 +8,7 @@ public class HidingState : State
 
     public override void handle_input(PlayerStateController controller)
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2")||Input.GetKeyDown(KeyCode.S))
         {
             Debug.Log("Move");
             controller.ChangeState(controller.movingState);
