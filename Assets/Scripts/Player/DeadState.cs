@@ -26,5 +26,6 @@ public class DeadState : State {
         controller.rb.velocity = Vector3.zero;
         controller.animator.SetBool("Dead", true);
         controller.animator.SetTrigger("DeathTrigger");
+        
     }
 }

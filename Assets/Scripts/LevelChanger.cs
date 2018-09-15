@@ -23,4 +23,13 @@ public class LevelChanger : MonoBehaviour {
     {
         SceneManager.LoadScene(levelToLoad);
     }
+
+    public void FadeToDeath()
+    {
+        animator.SetTrigger("Death");
+    }
+    public void Respawn()
+    {
+        animator.SetTrigger("Respawn");
+    }
 }

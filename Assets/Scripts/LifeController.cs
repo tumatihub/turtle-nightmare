@@ -8,26 +8,32 @@ public class LifeController : MonoBehaviour {
     public int health = 5;
     public Vector2 currentPosition;
     public Vector2 initialPosition;
-    public Canvas hud;
+    public GameObject hud;
     public Image[] lifes;
+    public GameObject fadeLevel;
+    public LevelChanger levelChanger;
     
 
 
     // Use this for initialization
     private void Awake()
     {
-        if(control == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            control = this;
-        }
-        else if(control != this)
-        {
-            Destroy(gameObject);
-        }
+        //if(control == null)
+        //{
+        //    DontDestroyOnLoad(gameObject);
+        //    control = this;
+        //}
+        //else if(control != this)
+        //{
+        //    Destroy(gameObject);
+        //}
     }
     void Start () {
+        hud = GameObject.Find("HUD");
         UpdateHUD();
+        fadeLevel = GameObject.Find("FadeLevel");
+        levelChanger = fadeLevel.GetComponent<LevelChanger>();
+        health = 5;
 	}
 	
 	// Update is called once per frame
@@ -59,4 +65,10 @@ public class LifeController : MonoBehaviour {
             }
         }
     }
+
+    public void GameOver()
+    {
+        levelChanger.FadeToLevel(0);
+    }
+
 }

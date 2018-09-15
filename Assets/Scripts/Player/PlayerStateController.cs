@@ -27,6 +27,8 @@ public class PlayerStateController : MonoBehaviour {
     public Transform wallHole;
     [HideInInspector] public SpriteRenderer turtleSprite;
     public bool dead = false;
+    private GameObject fadeLevel;
+    private LevelChanger levelScript;
 
     // Hook
     public float speedHook;
@@ -70,6 +72,8 @@ public class PlayerStateController : MonoBehaviour {
         life = lifeController.GetComponent<LifeController>();
         life.initialPosition = transform.position;
         life.currentPosition = transform.position;
+        fadeLevel = GameObject.Find("FadeLevel");
+        levelScript = fadeLevel.GetComponent<LevelChanger>();
 
         Cursor.visible = false;
 
@@ -148,7 +152,7 @@ public class PlayerStateController : MonoBehaviour {
         Debug.Log("Damage");
         life.OnDamage(damage);
         ChangeState(deadState);
-        
+        levelScript.FadeToDeath();
         
         
         
@@ -165,12 +169,13 @@ public class PlayerStateController : MonoBehaviour {
        if (life.health > 0)
         {
             transform.position = life.currentPosition;
+            levelScript.Respawn();
         }
         else
         {
             
             life.currentPosition = life.initialPosition;
-            transform.position = life.currentPosition;
+            life.GameOver();
         }
         animator.SetBool("Dead", false);
         ChangeState(movingState);
