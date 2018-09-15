@@ -8,7 +8,7 @@ public class LifeController : MonoBehaviour {
     public int health = 5;
     public Vector2 currentPosition;
     public Vector2 initialPosition;
-    public GameObject hud;
+    public Canvas hud;
     public Image[] lifes;
     public GameObject fadeLevel;
     public LevelChanger levelChanger;
@@ -29,7 +29,7 @@ public class LifeController : MonoBehaviour {
         //}
     }
     void Start () {
-        hud = GameObject.Find("HUD");
+        //hud = GameObject.Find("HUD");
         UpdateHUD();
         fadeLevel = GameObject.Find("FadeLevel");
         levelChanger = fadeLevel.GetComponent<LevelChanger>();
@@ -68,7 +68,9 @@ public class LifeController : MonoBehaviour {
 
     public void GameOver()
     {
-        levelChanger.FadeToLevel(0);
+        Cursor.visible = true;
+        levelChanger.FadeToLevel(4);
+        
     }
 
 }
