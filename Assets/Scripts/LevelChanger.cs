@@ -6,10 +6,20 @@ using UnityEngine.SceneManagement;
 public class LevelChanger : MonoBehaviour {
 
     public Animator animator;
-    private int levelToLoad;	
-	
-	// Update is called once per frame
-	void Update () {
+    private int levelToLoad;
+    private GameManager _gm;
+
+    void Start()
+    {
+        _gm = GameObject.FindObjectOfType<GameManager>();
+        if (_gm == null)
+        {
+            Debug.LogError("Need an GameManager!!");
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
@@ -17,6 +27,7 @@ public class LevelChanger : MonoBehaviour {
     {
         levelToLoad = levelIndex;
         animator.SetTrigger("FadeOut");
+        _gm.UpdateBackgroundMusic(SceneManager.GetActiveScene().buildIndex, levelIndex);
     }
 
     public void OnFadeComplete()
