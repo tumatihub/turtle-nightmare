@@ -469,11 +469,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4726592856285916, guid: fcad9b90915b9cb458b64e256269a758, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.05
+      value: 1.06
       objectReference: {fileID: 0}
     - target: {fileID: 4726592856285916, guid: fcad9b90915b9cb458b64e256269a758, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.82
+      value: 1.21
       objectReference: {fileID: 0}
     - target: {fileID: 4726592856285916, guid: fcad9b90915b9cb458b64e256269a758, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2260,7 +2260,7 @@ Prefab:
     - target: {fileID: 212000973789492596, guid: 36bfc9b69d006a4409529e3b78ece29f,
         type: 2}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 212000973789492596, guid: 36bfc9b69d006a4409529e3b78ece29f,
         type: 2}
@@ -15394,6 +15394,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4726592856285916, guid: fcad9b90915b9cb458b64e256269a758,
     type: 2}
   m_PrefabInternal: {fileID: 133479068}
+--- !u!81 &1002290366
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1002290358}
+  m_Enabled: 1
 --- !u!1 &1015587072 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1084811104403150, guid: 6a8a6471804c3ce4b89d7b6a8eb1d9eb,
@@ -15512,7 +15519,7 @@ Prefab:
     - target: {fileID: 212000973789492596, guid: 36bfc9b69d006a4409529e3b78ece29f,
         type: 2}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 212000973789492596, guid: 36bfc9b69d006a4409529e3b78ece29f,
         type: 2}
@@ -15911,7 +15918,7 @@ Prefab:
     - target: {fileID: 212000973789492596, guid: 36bfc9b69d006a4409529e3b78ece29f,
         type: 2}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 212000973789492596, guid: 36bfc9b69d006a4409529e3b78ece29f,
         type: 2}
@@ -16088,26 +16095,6 @@ Prefab:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1002290358}
-    - target: {fileID: 212000973789492596, guid: 36bfc9b69d006a4409529e3b78ece29f,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1469209313
-      objectReference: {fileID: 0}
-    - target: {fileID: 212000973789492596, guid: 36bfc9b69d006a4409529e3b78ece29f,
-        type: 2}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 212000973789492596, guid: 36bfc9b69d006a4409529e3b78ece29f,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 61045016329839148, guid: 36bfc9b69d006a4409529e3b78ece29f,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36bfc9b69d006a4409529e3b78ece29f, type: 2}
   m_IsPrefabAsset: 0
@@ -17006,7 +16993,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1480818024}
   - component: {fileID: 1480818023}
-  - component: {fileID: 1480818022}
   - component: {fileID: 1480818021}
   - component: {fileID: 1480818025}
   m_Layer: 0
@@ -17046,13 +17032,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Cinemachine.CinemachineBrain+VcamEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!81 &1480818022
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1480818020}
-  m_Enabled: 1
 --- !u!20 &1480818023
 Camera:
   m_ObjectHideFlags: 0
@@ -17074,10 +17053,10 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 20
+  far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 7.38
+  orthographic size: 10
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -17100,7 +17079,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1480818020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.06218319, y: 2.2049139, z: -10.005859}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 50446340}
@@ -37803,7 +37782,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1629132967}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 1.0413992, z: -10.005859}
+  m_LocalPosition: {x: 1.06, y: 1.4313993, z: -10.005859}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1309613215}
@@ -37956,7 +37935,7 @@ Prefab:
     - target: {fileID: 212000973789492596, guid: 36bfc9b69d006a4409529e3b78ece29f,
         type: 2}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 212000973789492596, guid: 36bfc9b69d006a4409529e3b78ece29f,
         type: 2}

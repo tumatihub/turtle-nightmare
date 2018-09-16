@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114569552210930304}
   - component: {fileID: 114790860898551056}
   - component: {fileID: 61045016329839148}
+  - component: {fileID: 82948376250758856}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Untagged
@@ -70,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1763269426678108}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 64.22798, y: -2.73219, z: -2.2025256}
+  m_LocalPosition: {x: 0.1979847, y: -2.7721899, z: -2.2025256}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4610860935189670}
@@ -129,6 +130,128 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.432223, y: 0.35575998}
   m_EdgeRadius: 0
+--- !u!82 &82948376250758856
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1682460213577736}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8567391a22d57f747b3712b4a075ee92, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 0.8635578
+  MaxDistance: 16
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.116697
+      value: 1
+      inSlope: -8.572627
+      outSlope: -8.572627
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.16835341
+      value: 0.55410004
+      inSlope: -3.209226
+      outSlope: -3.209226
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.34077328
+      value: 0.25601196
+      inSlope: -1.3887976
+      outSlope: -1.3887976
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.9617358
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.6043066
+      value: 0.07090759
+      inSlope: -0.45173505
+      outSlope: -0.45173505
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.36306113
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.116743706
+      outSlope: -0.116743706
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95676574734863988
 Animator:
   serializedVersion: 3
@@ -159,6 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  playerScript: {fileID: 0}
   damage: 1
 --- !u!114 &114790860898551056
 MonoBehaviour:
@@ -173,6 +297,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hiddenTime: 2
   delay: 0
+  spikeSound: {fileID: 8300000, guid: 8567391a22d57f747b3712b4a075ee92, type: 3}
+  soundDelay: 0.5
 --- !u!212 &212000973789492596
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -206,7 +332,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1469209313
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: fd5479d0161322f4fa23d26ef084755b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -252,7 +378,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1469209313
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 4e6b5f7efc6f4734d810eed5086fb71a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
