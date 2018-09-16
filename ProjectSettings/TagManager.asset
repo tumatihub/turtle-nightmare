@@ -24,7 +24,7 @@ TagManager:
   - Enemies
   - Player
   - Hidden
-  - 
+  - Effects
   - 
   - 
   - 
@@ -47,6 +47,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2573618895
     locked: 0
   - name: Wall
     uniqueID: 3611880433
