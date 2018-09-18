@@ -63,6 +63,7 @@ public class PlayerStateController : MonoBehaviour {
     //SFX
     public AudioClip jumpSound;
     public AudioClip landingSound;
+    public AudioClip hookSound;
 
 
     private void Awake()

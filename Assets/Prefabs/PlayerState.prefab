@@ -423,6 +423,7 @@ MonoBehaviour:
   deadState: {fileID: 11400000, guid: d6c186860be188241976d67cca3d3377, type: 2}
   jumpSound: {fileID: 8300000, guid: c2c9314711dc3ac4eadd34e4af465229, type: 3}
   landingSound: {fileID: 8300000, guid: 4984eca085f177940ace637d7cf5d544, type: 3}
+  hookSound: {fileID: 8300000, guid: 9abc02f3781594a49b466a43327d6ef2, type: 3}
 --- !u!114 &114623812024362828
 MonoBehaviour:
   m_ObjectHideFlags: 1

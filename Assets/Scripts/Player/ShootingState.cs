@@ -44,6 +44,7 @@ public class ShootingState : State
         controller.hook.parent = null;
         controller.hookLine.enabled = true;
         _whereToShoot = controller.GetWhereToShoot();
+        controller.audioSource.PlayOneShot(controller.hookSound);
     }
 
     
