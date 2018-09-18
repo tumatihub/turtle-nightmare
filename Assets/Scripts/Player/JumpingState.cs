@@ -47,6 +47,7 @@ public class JumpingState : State
             //_isPressingJump = false;
             //_canJump = true;
             //_jumping = false;
+            
             controller.ChangeState(controller.movingState);
         }
 
@@ -87,6 +88,7 @@ public class JumpingState : State
         _isPressingJump = true;
         _jumpTimeCounter = controller.jumpTime;
         _jumping = true;
+        controller.audioSource.PlayOneShot(controller.jumpSound);
     }
 
     public override void onExit(PlayerStateController controller)

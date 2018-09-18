@@ -27,9 +27,12 @@ public class PlayerStateController : MonoBehaviour {
     public Transform wallHole;
     [HideInInspector] public SpriteRenderer turtleSprite;
     public bool dead = false;
+    public AudioSource audioSource;
+
+    // Private
     private GameObject fadeLevel;
     private LevelChanger levelScript;
-
+    
     // Hook
     public float speedHook;
     public bool isHooked;
@@ -57,6 +60,11 @@ public class PlayerStateController : MonoBehaviour {
     public State fallingState;
     public State deadState;
 
+    //SFX
+    public AudioClip jumpSound;
+    public AudioClip landingSound;
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -64,6 +72,11 @@ public class PlayerStateController : MonoBehaviour {
         hookLine = GetComponent<LineRenderer>();
         animator = GetComponent<Animator>();
         turtleSprite = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogError("Missing AudioSource");
+        }
     }
 
     // Use this for initialization

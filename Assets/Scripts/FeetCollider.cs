@@ -21,6 +21,7 @@ public class FeetCollider : MonoBehaviour {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Platform"))
         {
             _controller.isGrounded = true;
+            _controller.audioSource.PlayOneShot(_controller.landingSound);
         }
     }
 
