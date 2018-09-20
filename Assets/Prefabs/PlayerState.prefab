@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 58766929641566778}
   - component: {fileID: 114097498298256262}
   - component: {fileID: 50873804116458192}
+  - component: {fileID: 212517108543438050}
   m_Layer: 10
   m_Name: Hook
   m_TagString: Untagged
@@ -421,6 +422,8 @@ MonoBehaviour:
   pullingState: {fileID: 11400000, guid: 6ff3319af9118154099e136acf02d235, type: 2}
   fallingState: {fileID: 11400000, guid: efc5f9357ed36e346824e6e84f5bdfe6, type: 2}
   deadState: {fileID: 11400000, guid: d6c186860be188241976d67cca3d3377, type: 2}
+  scalex: 1
+  scaley: 20
   jumpSound: {fileID: 8300000, guid: c2c9314711dc3ac4eadd34e4af465229, type: 3}
   landingSound: {fileID: 8300000, guid: 4984eca085f177940ace637d7cf5d544, type: 3}
   hookSound: {fileID: 8300000, guid: 9abc02f3781594a49b466a43327d6ef2, type: 3}
@@ -467,15 +470,15 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -382841375
-  m_SortingLayer: 8
+  m_SortingLayerID: -171584753
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.1
+    widthMultiplier: 0.09837471
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -493,8 +496,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.38447848, g: 0.6037736, b: 0.57709765, a: 1}
-      key1: {r: 0.38823533, g: 0.6039216, b: 0.5803922, a: 1}
+      key0: {r: 0.30041832, g: 0.32472718, b: 0.4056604, a: 1}
+      key1: {r: 0.3019608, g: 0.3254902, b: 0.40784314, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -527,6 +530,52 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!212 &212517108543438050
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1716621719254986}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -171584753
+  m_SortingLayer: 5
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 21300000, guid: 51fdff481bf752d4eacbe56de2889e96, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.1015625, y: 0.13671875}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!212 &212959263178718840
 SpriteRenderer:
   m_ObjectHideFlags: 1

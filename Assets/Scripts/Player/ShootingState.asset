@@ -11,3 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451ec86acf031084a8ac2626a95e7a53, type: 3}
   m_Name: ShootingState
   m_EditorClassIdentifier: 
+  rotationOffset: -90

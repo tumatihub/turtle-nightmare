@@ -6,18 +6,21 @@ public class Hook : MonoBehaviour {
 
     public GameObject player;
     private PlayerStateController _controller;
+    private SpriteRenderer _hookSprite;
 
     void Start()
     {
         _controller = player.GetComponent<PlayerStateController>();
+        _hookSprite = GetComponent<SpriteRenderer>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Hook colidiu com Player!");
             _controller.isRetracted = true;
+            _hookSprite.enabled = false;
+
         }
 
         if (collision.gameObject.tag == "Hookable" || collision.gameObject.tag == "HookSupport")
@@ -38,6 +41,7 @@ public class Hook : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             _controller.isRetracted = false;
+            _hookSprite.enabled = true;
         }
 
         if (collision.gameObject.tag == "Hookable" || collision.gameObject.tag == "HookSupport")

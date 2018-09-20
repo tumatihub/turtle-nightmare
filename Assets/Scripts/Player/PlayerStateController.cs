@@ -60,6 +60,9 @@ public class PlayerStateController : MonoBehaviour {
     public State fallingState;
     public State deadState;
 
+    public float scalex;
+    public float scaley;
+
     //SFX
     public AudioClip jumpSound;
     public AudioClip landingSound;
