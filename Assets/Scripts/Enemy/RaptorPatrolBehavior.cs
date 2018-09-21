@@ -8,6 +8,8 @@ public class RaptorPatrolBehavior : MonoBehaviour {
     public States state = States.PATROLLING;
     public float speed = 2;
     public bool movingRight = true;
+    public AudioSource audioSource;
+    public AudioClip attackClip;
     private GameObject player;
     private PlayerStateController playerScript;
     private Animator anima;
@@ -17,6 +19,7 @@ public class RaptorPatrolBehavior : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         anima = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         aggroScript = GetComponentInChildren<AggroBox>();
@@ -111,5 +114,11 @@ public class RaptorPatrolBehavior : MonoBehaviour {
     {
         anima.SetBool("Attack", false);
         state = States.FOLLOWING;
+    }
+
+    private void PlayAttack()
+    {
+        audioSource.clip = attackClip;
+        audioSource.Play();
     }
 }

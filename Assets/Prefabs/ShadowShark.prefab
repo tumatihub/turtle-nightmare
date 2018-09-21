@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 61154751775500768}
   - component: {fileID: 114352574746530324}
   - component: {fileID: 95183555592428452}
+  - component: {fileID: 82744264767241678}
   m_Layer: 9
   m_Name: ShadowShark
   m_TagString: Untagged
@@ -175,6 +176,128 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!82 &82744264767241678
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1506913610765516}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 39
+  DopplerLevel: 1
+  MinDistance: 0.8635578
+  MaxDistance: 16
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.116697
+      value: 1
+      inSlope: -8.572627
+      outSlope: -8.572627
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.16835341
+      value: 0.55410004
+      inSlope: -3.209226
+      outSlope: -3.209226
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.34077328
+      value: 0.25601196
+      inSlope: -1.3887976
+      outSlope: -1.3887976
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.9617358
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.6043066
+      value: 0.07090759
+      inSlope: -0.45173505
+      outSlope: -0.45173505
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.36306113
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.116743706
+      outSlope: -0.116743706
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95183555592428452
 Animator:
   serializedVersion: 3
@@ -205,6 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  playerScript: {fileID: 0}
   damage: 1
 --- !u!114 &114352574746530324
 MonoBehaviour:
@@ -221,6 +345,8 @@ MonoBehaviour:
   speed: 3.02
   movingRight: 1
   aggroBox: {fileID: 0}
+  audioSource: {fileID: 0}
+  attackClip: {fileID: 8300000, guid: fd09c8ed010d10849a4537a6680ddcf9, type: 3}
 --- !u!114 &114688250633289232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,6 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundDistance: 2
+  wallDistance: 0.1
   obstacle: 0
   Platform:
     serializedVersion: 2
@@ -270,7 +397,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1936172169
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f785cdb8d95fe1d48a364468f9894bd2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

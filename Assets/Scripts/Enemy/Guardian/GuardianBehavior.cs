@@ -7,6 +7,8 @@ public class GuardianBehavior : MonoBehaviour {
     public States state = States.GUARDING;
     public float speed = 2;
     public bool movingRight = true;
+    public AudioSource audioSource;
+    public AudioClip attackClip;
     private GameObject player;
     private Animator anima;
     private PlayerStateController playerScript;
@@ -16,6 +18,7 @@ public class GuardianBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        audioSource = GetComponent<AudioSource>();
         anima = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerStateController>();
@@ -132,5 +135,11 @@ public class GuardianBehavior : MonoBehaviour {
     {
         anima.SetBool("Attack", false);
         state = States.FOLLOWING;
+    }
+
+    private void PlayAttack()
+    {
+        audioSource.clip = attackClip;
+        audioSource.Play();
     }
 }

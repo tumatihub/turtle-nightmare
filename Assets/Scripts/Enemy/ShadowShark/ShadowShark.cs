@@ -8,6 +8,8 @@ public class ShadowShark : MonoBehaviour {
     public float speed=3;
     public bool movingRight = true;
     public GameObject aggroBox;
+    public AudioSource audioSource;
+    public AudioClip attackClip;
     private GameObject player;
     private PlayerStateController playerScript;
     private AggroBox aggroScript;
@@ -18,6 +20,7 @@ public class ShadowShark : MonoBehaviour {
    
 	// Use this for initialization
 	void Start () {
+        audioSource = GetComponent<AudioSource>();
         aggroScript = aggroBox.GetComponent<AggroBox>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerStateController>();
@@ -61,8 +64,11 @@ public class ShadowShark : MonoBehaviour {
             case States.FOLLOWING:
                 if (player.transform.position.x > transform.position.x - 1f && player.transform.position.x < transform.position.x + 1f)
                 {
-                    state = States.ATTACKING;
-                    return;
+                    if (playerScript.dead == false)
+                    {
+                        state = States.ATTACKING;
+                        return;
+                    }
                 }
                 if (!aggroScript.aggro)
                 {
@@ -93,6 +99,12 @@ public class ShadowShark : MonoBehaviour {
     {
         anima.SetBool("Attacking", false);
         state = States.FOLLOWING;
+    }
+
+    private void PlayAttack()
+    {
+        audioSource.clip = attackClip;
+        audioSource.Play();
     }
 }
 
