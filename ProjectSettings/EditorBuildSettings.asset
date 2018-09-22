@@ -12,15 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 6f2f4fcd85e98dc49ab6a565f1484d37
   - enabled: 1
-    path: Assets/Scenes/Guilherme_Sandbox.unity
+    path: Assets/Scenes/Nivel 1.unity
     guid: 81e9df46a39b0a84a8049c71417dd5dc
   - enabled: 1
-    path: Assets/Scenes/Felipe_Sandbox.unity
+    path: Assets/Scenes/Nivel 2.unity
     guid: 6db2e9921f6e7bf418b120916d1a9ae4
   - enabled: 1
-    path: Assets/Scenes/3 Nivel.unity
+    path: Assets/Scenes/Nivel 3.unity
     guid: c255ff56f00a2a24bb4a3342d1c12195
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 6bf49f38eeba06b4dbcffea361ba33bb
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 55469fb0a1cabdd4fb49586a4bc5151a
   m_configObjects: {}

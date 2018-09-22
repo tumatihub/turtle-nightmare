@@ -25,6 +25,10 @@ public class LevelChanger : MonoBehaviour {
 
     public void FadeToLevel(int levelIndex)
     {
+        if(levelIndex == 0)
+        {
+            Cursor.visible = true;
+        }
         levelToLoad = levelIndex;
         animator.SetTrigger("FadeOut");
         _gm.UpdateBackgroundMusic(SceneManager.GetActiveScene().buildIndex, levelIndex);
